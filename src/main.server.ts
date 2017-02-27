@@ -10,6 +10,8 @@ enableProdMode();
 
 const app = express();
 
+const serverPort = "8000"; 
+
 app.engine('html', ngExpressEngine({
 	baseUrl: 'http://localhost:4200',
 	bootstrap: [AppServerModuleNgFactory]
@@ -26,6 +28,6 @@ app.get('/lazy', (req, res) => {
 	res.render('index', {req});
 });
 
-app.listen(8000,() => {
-	console.log('listening...')
+app.listen(serverPort, () => {
+	console.log('listening on port ' + serverPort + ' ...)
 });
